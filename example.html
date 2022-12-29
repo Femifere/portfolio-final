@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> color changer</title>
+        <style type="text/css">
+            h1 {
+                text-align: center;
+                font-family: sans-serif;
+                color: orangered;
+                font-size: 65px;
+                
+            }
+            p {
+                text-align: center;
+                text-decoration: underline;
+                color: yellowgreen;
+            }
+        nav {
+            margin: 27px auto 0;
+
+            position: relative;
+            width: 590px;
+            height: 50px;
+            background-color: #34495e;
+            border-radius: 8px;
+            font-size: 0;
+        }  
+        nav a {
+            line-height: 50px;
+            height: 100%;
+            font-size: 15px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            text-transform:uppercase;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }  
+        nav .animation{
+            position: absolute;
+            height: 100%;
+            top: 0;
+            z-index: 0;
+            transition: all .5s ease 0s;
+            border-radius: 8px;
+        }
+        a:nth-child(1) {
+            width: 100px;
+        }
+        a:nth-child(2) {
+            width: 110px;
+        }
+        a:nth-child(3) {
+            width: 100px;
+        }
+        a:nth-child(4) {
+            width: 160px;
+        }
+        a:nth-child(5) {
+            width: 120px;
+        }
+        nav.start-home, a:nth-child(1):hover~.animation {
+            width: 100px;
+            left: 0;
+            background-color: #1abc9c;
+        } 
+        nav.start-stream, a:nth-child(2):hover~.animation {
+            width: 110px;
+            left: 100px;
+            background-color: #e74c3c;
+        }  
+        nav.start-latest, a:nth-child(3):hover~.animation {
+            width: 100px;
+            left: 210px;
+            background-color: #3498db;
+        } 
+        nav.start-trending, a:nth-child(4):hover~.animation {
+            width: 160px;
+            left: 310px;
+            background-color: #9b59b6;
+        } 
+        nav.start-contact, a:nth-child(5):hover~.animation {
+            width: 120px;
+            left: 470px;
+            background-color: #e67e22;
+        } 
+        body {
+            font-size: 12px;
+            font-family: sans-serif;
+            background: #2c3e50;
+        }
+        span {
+            color: #2bd6b4;
+        }
+        * {
+        box-sizing: border-box;
+      }
+      .slider {
+        width: 300px;
+        text-align: center;
+        overflow: hidden;
+        align-items: center;
+        margin: 0 auto;
+      }
+      .slides {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+      }
+      .slides::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      .slides::-webkit-scrollbar-thumb {
+        background: #666;
+        border-radius: 10px;
+      }
+      .slides::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .slides > div {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 300px;
+        height: 300px;
+        margin-right: 50px;
+        border-radius: 10px;
+        background: #eee;
+        transform-origin: center center;
+        transform: scale(1);
+        transition: transform 0.5s;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+      }
+      .slider > a {
+        display: inline-flex;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: white;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 0 0.5rem 0;
+        position: relative;
+      }
+      .slider > a:active {
+        top: 1px;
+        color: #1c87c9;
+      }
+      .slider > a:focus {
+        background: #eee;
+      }
+      /* Don't need button navigation */
+      @supports (scroll-snap-type) {
+        .slider > a {
+          display: none;
+        }
+      }
+        </style>
+    </head>
+    <body>
+        <h1> Moeru-Anime </h1>
+        <p> Home of all your favourite Anime series</p>
+        <div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Stream</a>
+                <a href="#">Latest</a>
+                <a href="#">Trending</a>
+                <a href="#">Contact</a>
+                <div class="animation start-home"></div>
+            </nav>
+        </div>
+        <br>
+        <br>
+        <div class="slider">
+            <a href="#slide-1">1</a>
+            <a href="#slide-2">2</a>
+            <a href="#slide-3">3</a>
+            <a href="#slide-4">4</a>
+            <a href="#slide-5">5</a>
+            <div class="slides">
+              <div id="slide-1">1</div>
+              <div id="slide-2">2</div>
+              <div id="slide-3">3</div>
+              <div id="slide-4">4</div>
+              <div id="slide-5">5</div>
+            </div>
+          </div> 
+    </body>
+</html>    
